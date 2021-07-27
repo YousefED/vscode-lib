@@ -10,7 +10,7 @@ The source is downloaded and built from: https://github.com/microsoft/vscode/tre
 
     npm install vscode-lib
 
-Example code to access all exports from `https://github.com/microsoft/vscode/blob/main/src/vs/base/common/event.ts`:
+Example code to access all exports from https://github.com/microsoft/vscode/blob/main/src/vs/base/common/event.ts:
 
     import { event } from "vscode-lib";
 
