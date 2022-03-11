@@ -1,11 +1,15 @@
 {
   "name": "vscode-lib",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "private": false,
   "author": {
     "name": "YousefED"
   },
-  "exports": "./dist/vscode-lib.modern.js",
+  "type": "module",
+  "exports": {
+    "require": "./dist/vscode-lib.cjs",
+    "default": "./dist/vscode-lib.modern.js"
+  },
   "main": "./dist/vscode-lib.cjs",
   "module": "./dist/vscode-lib.module.js",
   "unpkg": "./dist/vscode-lib.umd.js",
@@ -14,7 +18,7 @@
   "license": "MIT",
   "dependencies": {},
   "devDependencies": {
-    "microbundle": "^0.13.3",
+    "microbundle": "^0.14.2",
     "typescript": "^4.3.5",
     "node-wget": "^0.4.3"
   },
@@ -25,27 +29,9 @@
     "update": "rm -rf src/downloaded && npm run download && npm run unzip && rm -rf main.zip",
     "test": "echo \"No tests\" && exit 1",
     "clean": "rm -rf dist && rm -rf types",
-    "build": "npm run clean && microbundle build --raw --no-compress"
+    "build": "npm run clean && microbundle build --raw --no-compress --target=node"
   },
   "publishConfig": {
     "access": "public"
-  },
-  "eslintConfig": {
-    "extends": [
-      "react-app",
-      "react-app/jest"
-    ]
-  },
-  "browserslist": {
-    "production": [
-      ">0.2%",
-      "not dead",
-      "not op_mini all"
-    ],
-    "development": [
-      "last 1 chrome version",
-      "last 1 firefox version",
-      "last 1 safari version"
-    ]
   }
 }
